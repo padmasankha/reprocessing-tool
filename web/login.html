@@ -1,0 +1,27 @@
+<div class="card card-container"> <img class="profile-img-card" src="/img/avatar_2x.png" />
+	<form name="userLogin" ng-submit="loginUser()" class="form-signin" novalidate>
+		<br/>
+		
+		<div class="form-group" ng-class="{ 'has-error': userLogin.username.$dirty && userLogin.username.$error.required && userLogin.username.$error.email}">
+			<input type="email" name="username" id="username" class="form-control" ng-model="username" placeholder="Email address" required
+				autofocus/>
+			<span ng-show="userLogin.username.$dirty && userLogin.username.$error.required" class="error-font-color">Username is required</span>
+			<span ng-show="userLogin.username.$error.email" class="error-font-color">This is not a valid email.</span>
+		</div>
+		<div class="form-group" ng-class="{ 'has-error': userLogin.password.$dirty && userLogin.password.$error.required }">
+			<input type="password" name="password" id="password" class="form-control" ng-model="password" placeholder="Password" required
+			/>
+			<span ng-show="userLogin.password.$dirty && userLogin.password.$error.required" class="error-font-color">Password is required</span>
+		</div>
+  
+		<div class="checkbox">
+			<label><input type="checkbox" value="remember-me"> Remember me </label>
+			<br/>
+		</div>
+		<button type="submit" ng-disabled="userLogin.$invalid || dataLoading" class="btn btn-lg btn-primary btn-block btn-signin">Sign in</button>
+	</form>
+	<a href="forgot-password" class="forgot-password">Trouble signing in?</a>
+	<div class="signup-text">
+		<p>Don't have an account? <a href="signup">Sign up</a></p>
+	</div>
+</div>

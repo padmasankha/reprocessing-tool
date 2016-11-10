@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="file_reprocessing_app">
+
+<head>
+	<title>File Reprocessing</title>
+	<link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="/style/css/app.style.css" rel="stylesheet" />
+	<base href="/">
+</head>
+
+<body>
+	<div ng-include="'menu.html'" ng-if="globals.currentUser"></div>
+	<div ng-view></div>
+</body>
+
+</html>
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/bower_components/angular/angular.js"></script>
+<script src="/bower_components/angular-route/angular-route.js"></script>
+<script src="/controllers/routingController.js"></script>
+<script src="/controllers/registerController.js"></script>
+<script src="/controllers/loginController.js"></script>

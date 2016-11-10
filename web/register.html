@@ -1,0 +1,36 @@
+<div class="card card-container">
+	<form name="userRegister" ng-submit="addUserDetails()" class="form-signin" novalidate>
+		<p class="text-center text-primary"><b>Sign up</b></p>
+		<br/>
+
+		<div class="form-group" ng-class="{ 'has-error': userRegister.username.$dirty && userRegister.username.$error.required}">
+			<input type="text" name="username" id="username" class="form-control" ng-model="username" placeholder="Username" required
+				autofocus/>
+			<span ng-show="userRegister.username.$dirty && userRegister.username.$error.required" class="error-font-color">Username is required</span>
+		</div>
+
+		<div class="form-group" ng-class="{ 'has-error': userRegister.email.$dirty && userRegister.email.$error.required && userRegister.email.$error.email}">
+			<input type="email" name="email" id="email" class="form-control" ng-model="email" placeholder="Email address" required/>
+			<span ng-show="userRegister.email.$dirty && userRegister.email.$error.required" class="error-font-color">Email is required</span>
+			<span ng-show="userRegister.email.$error.email" class="error-font-color">This is not a valid email.</span>
+		</div>
+
+		<div class="form-group" ng-class="{ 'has-error': userRegister.password.$dirty && userRegister.password.$error.required }">
+			<input type="password" name="password" id="password" class="form-control" ng-model="password" placeholder="Password" required
+			/>
+			<span ng-show="userRegister.password.$dirty && userRegister.password.$error.required" class="error-font-color">Password is required</span>
+		</div>
+
+		<div class="form-group" ng-class="{ 'has-error': userRegister.confirm_password.$dirty && userRegister.confirm_password.$error.required }">
+			<input type="password" name="confirm_password" id="confirm_password" class="form-control" ng-model="confirm_password" placeholder="Confirm password"
+				required />
+			<span ng-show="userRegister.confirm_password.$dirty && userRegister.confirm_password.$error.required" class="error-font-color">Password is required</span>
+			<span ng-show="password !== confirm_password" class="error-font-color">Password mismatch</span>
+		</div>
+		<br/>
+		<button type="submit" ng-disabled="userRegister.$invalid || userRegister.password.$viewValue !== userRegister.confirm_password.$viewValue || dataLoading" class="btn btn-success">Create an account</button>
+	</form>
+	<div class="signup-text">
+		<p>Already have an account? <a href="/">Sign in</a></p>
+	</div>
+</div>

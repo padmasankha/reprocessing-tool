@@ -1,0 +1,25 @@
+{
+  "name": "reprocessing_tool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/padmasankha/reprocessing_tool.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/padmasankha/reprocessing_tool/issues"
+  },
+  "homepage": "",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "^1.5.8",
+    "jquery": "^3.1.1",
+    "angular-route": "^1.5.8"
+  }
+}
